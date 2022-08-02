@@ -1,0 +1,46 @@
+{% load crispy_forms_tags %}
+{% block start %}
+
+<body style="background-image: url(https://images.pexels.com/photos/3053859/pexels-photo-3053859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+   <div class="content-section col-md-8 col-md-offset-2;">
+  <center>
+   <form method="POST"  style="background-color: transparent; border: 1px solid transparent; margin:5%; padding:10%; border-radius:25%; align-items: center; ">
+    {% csrf_token %}
+
+  <fieldset class="form-group"  style="background-color: transparent;border: 1px solid transparent; font-size: 1.5rem; align-items: center;" >
+        <div id="div_id_username" class="form-group">
+           <label for="id_username" class=" requiredField" style="color:black; background-color: rgb(255, 71, 71); border-radius: 10%;">
+                      Username
+            <span class="asteriskField">
+          </span> 
+         </label>
+      <div>
+         <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" class="textinput textInput form-control" required="" id="id_username">
+     </div>
+    </div> 
+
+       <div id="div_id_password" class="form-group"> 
+         <label  for="id_password"  class=" requiredField" style="color:black; background-color: rgb(255, 71, 71); border-radius: 10%; ">
+            Password
+         <span class="asteriskField"></span>
+       </label> 
+    <div>
+      <input type="password" name="password" autocomplete="current-password" class="textinput textInput form-control" required="" id="id_password">
+    </div>
+   </div>  
+  </fieldset>
+
+   <center>
+   </form>
+   <button  style="font-size:1rem;" class="btn btn-primary"  type="submit"><span class="glyphicon glyphicon-log-in"></span> &nbsp;Sign in </button>
+</center>
+
+  <br/>  
+  <sub style="text-align:left"><a href="{% url 'register' %}" style="text-decoration: none; color: black; padding:0%; cursor:pointer; margin-right:-1%; margin-bottom: 10rem; background-color: white">Don't have account? Create one.</a></sub>
+  </form>
+
+  </center>
+ </div>
+</body>
+{% endblock start %}
+

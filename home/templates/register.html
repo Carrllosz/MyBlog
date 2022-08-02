@@ -1,0 +1,19 @@
+{% load crispy_forms_tags %}
+{% block start %}
+
+<body  style="background-image: url(https://images.pexels.com/photos/3053859/pexels-photo-3053859.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+<div class="content-section col-md-8 col-md-offset-2">
+  <form method="POST" style="border: 1px solid transparent ; padding:4%; border-radius:15%; margin-right: 20%;margin-left: 20%;">
+    {% csrf_token %}
+    <fieldset class="form-group" style="background-image: url(https://images.unsplash.com/photo-1601752943749-7dd8d89f407a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bGluZXxlbnwwfDB8MHxyZWR8&w=1000&q=80);">
+      {{ form|crispy}}
+    </fieldset>
+    <center>
+      <button style="font-size:1rem; padding: 1%; padding-right: 3%; margin-top: 3%;" class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-check"></span> &nbsp; SIGN UP</button>
+    </center>
+    <br />
+    <sub><a href="{% url 'Login' %}" style="text-decoration: none; color: blue; padding:0%; cursor:pointer;background-color: white; border-radius: 4px;">Already have an account ?</a></sub>
+  </form>
+</div>
+</body>
+{% endblock start %}
