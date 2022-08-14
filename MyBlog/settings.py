@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
+import django_heroku
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-q1s49$3s4ww(0o)o6(0+(9u69ev%tvzlnt0wo$e7^3b(=@yd9l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://blogseriesefilmes.herokuapp.com/']
 
 
 # Application definition
@@ -152,3 +153,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # EMAIL_PORT = 587
 # EMAIL_HOST_USER = 'email'
 # EMAIL_HOST_PASSWORD = 'password'
+
+django_heroku.settings(locals())
